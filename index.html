@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<style>
+@font-face {
+  font-family: 'pixel';
+  src: url('font/MinecraftTen-VGORe.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'pixels';
+  src: url('font/Minecrafter-MA3Dw.ttf');
+  font-weight: normal;
+}
+p {
+  font-weight: Thin;
+}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+        }
+        .glow-button {
+            font-size: 20px;
+            padding: 15px 30px;
+            color: white;
+            background: none;
+            border: 2px solid #0ff;
+            border-radius: 50px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .glow-button::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 0;
+            height: 100%;
+            background: #0ff;
+            transition: 0.4s;
+            z-index: -1;
+        }
+        .glow-button:hover::before {
+            width: 100%;
+        }
+        .glow-button:hover {
+            color: black;
+            box-shadow: 0 0 20px #0ff;
+        }
+    </style>
+<body>
+  
+   <button onclick="openPage()" class="glow-button"><p style="font-family: 'pixels';">BOSHLASH</p></button>
+   
+   <script>
+        function openPage() {
+            setTimeout(() => {
+                if (navigator.onLine) {
+                    window.location.href = "kirish.html";
+                } else {
+                    window.location.href = "noInternet.html";
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
